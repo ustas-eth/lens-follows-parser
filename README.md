@@ -2,18 +2,26 @@
 A script to get all accounts' follows and write them to a local DB.
 
 ## How to use
-1. Install deps and configure the .env file.
-`yarn`
+1. Configure the .env file.
+2. Install deps.
+```
+yarn
+```
 
-2. Run the script for a chosen account:
+3. Run the script for a chosen account:
    - `handle` Lens profile's handle;
    - `ownedBy` Polygon address that holds the handle NFT;
    - `r` recursion level, where 0 will parse follows of the `handle` profile, 1 - follows of the follows, 2 - follows of the follows of the follows... And so on. Beware that you'll likely be banned on the 1st or 2nd level.
-`yarn following --handle yoginth --ownedBy 0x3A5bd1E37b099aE3386D13947b6a90d97675e5e3 --r 0`
+```
+yarn following --handle yoginth --ownedBy 0x3A5bd1E37b099aE3386D13947b6a90d97675e5e3 --r 0
+```
 
-1. Read result values
-`yarn read --handle yoginth`
+4. Read result values.
+```
+yarn read --handle yoginth
+```
 
+And the output should be:
 ```
 $ ts-node ./src/tasks/read --handle yoginth
 [
